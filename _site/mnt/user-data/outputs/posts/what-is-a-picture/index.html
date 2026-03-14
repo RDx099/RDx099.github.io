@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Rahul Dev Singh">
+<meta name="dcterms.date" content="2025-03-14">
+<meta name="description" content="Before you open OpenCV, understand what you are actually looking at">
 
-<title>About – Pixels &amp; Principles</title>
+<title>What is a Picture? – Pixels &amp; Principles</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,31 +26,66 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-3f230b53dc93e4a04bf4a3505d77a42a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-29a29eae8fe046d865b2a1d8bad8a0f3.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-3f230b53dc93e4a04bf4a3505d77a42a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6db8da7e96fbc2430d204b482a0337c3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-27bb52e7edcaeefbe428a7e4e2b9c96c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-6db8da7e96fbc2430d204b482a0337c3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../../">
+<link href="../../../../../favicon.png" rel="icon" type="image/png">
+<script src="../../../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../../site_libs/quarto-html/quarto-syntax-highlighting-3f230b53dc93e4a04bf4a3505d77a42a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-29a29eae8fe046d865b2a1d8bad8a0f3.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../../../site_libs/quarto-html/quarto-syntax-highlighting-3f230b53dc93e4a04bf4a3505d77a42a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../../site_libs/bootstrap/bootstrap-6db8da7e96fbc2430d204b482a0337c3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../../site_libs/bootstrap/bootstrap-dark-27bb52e7edcaeefbe428a7e4e2b9c96c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../../../site_libs/bootstrap/bootstrap-6db8da7e96fbc2430d204b482a0337c3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,10 +115,10 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../../../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -249,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../../../index.html">
     <span class="navbar-title">Pixels &amp; Principles</span>
     </a>
   </div>
@@ -260,19 +298,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./first-principles.qmd"> 
+    <a class="nav-link" href="../../../../../first-principles.qmd"> 
 <span class="menu-text">First Principles</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./paper-to-code.qmd"> 
+    <a class="nav-link" href="../../../../../paper-to-code.qmd"> 
 <span class="menu-text">Paper → Code</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="../../../../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -303,21 +341,57 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In this post</h2>
+   
+  <ul>
+  <li><a href="#a-story-first" id="toc-a-story-first" class="nav-link active" data-scroll-target="#a-story-first">A story first</a></li>
+  <li><a href="#what-a-computer-sees-when-it-looks-at-an-image" id="toc-what-a-computer-sees-when-it-looks-at-an-image" class="nav-link" data-scroll-target="#what-a-computer-sees-when-it-looks-at-an-image">What a computer sees when it looks at an image</a></li>
+  <li><a href="#the-meaning-of-those-numbers" id="toc-the-meaning-of-those-numbers" class="nav-link" data-scroll-target="#the-meaning-of-those-numbers">The meaning of those numbers</a></li>
+  <li><a href="#colour-images-three-grids-not-one" id="toc-colour-images-three-grids-not-one" class="nav-link" data-scroll-target="#colour-images-three-grids-not-one">Colour images — three grids, not one</a></li>
+  <li><a href="#what-the-shape-tells-you" id="toc-what-the-shape-tells-you" class="nav-link" data-scroll-target="#what-the-shape-tells-you">What the shape tells you</a></li>
+  <li><a href="#one-important-warning-about-opencv" id="toc-one-important-warning-about-opencv" class="nav-link" data-scroll-target="#one-important-warning-about-opencv">One important warning about OpenCV</a></li>
+  <li><a href="#what-you-should-now-be-able-to-say" id="toc-what-you-should-now-be-able-to-say" class="nav-link" data-scroll-target="#what-you-should-now-be-able-to-say">What you should now be able to say</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
-</div>
+<h1 class="title">What is a Picture?</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">computer-vision</div>
+    <div class="quarto-category">first-principles</div>
+    <div class="quarto-category">beginner</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Before you open OpenCV, understand what you are actually looking at
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Rahul Dev Singh </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 14, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -327,26 +401,180 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="rahul-dev-singh" class="level2">
-<h2 class="anchored" data-anchor-id="rahul-dev-singh">Rahul Dev Singh</h2>
-<p><strong>Hungry for Teaching.</strong></p>
-<p>I have spent years watching students confidently use big words — convolution, embedding, gradient descent — without truly understanding what is happening underneath. This blog exists to fix that.</p>
-<p>Every post starts with a story. Sometimes from history. Sometimes from my own embarrassing past. The concept arrives last, after the story has already landed in your memory. By the time we get to the technical part, you already have a hook to hang it on.</p>
-<section id="what-you-will-find-here" class="level3">
-<h3 class="anchored" data-anchor-id="what-you-will-find-here">What you will find here</h3>
-<p><strong>First Principles</strong> — the things everyone assumes you know but nobody ever properly explained. One concept per post, done deeply.</p>
-<p><strong>Paper → Code</strong> — research papers that changed computer vision, implemented clearly from scratch. No MATLAB. No “see the official repo.” Just clean, readable Python with explanation.</p>
+<section id="a-story-first" class="level2">
+<h2 class="anchored" data-anchor-id="a-story-first">A story first</h2>
+<div class="story-box">
+<p>When I got my first smartphone, I became obsessed with photography. I would click pictures of everything — chai, sunsets, my neighbour’s cat. One day my younger brother asked me, <em>“Bhaiya, what actually is a photo? Like what is it made of?”</em></p>
+<p>I said, <em>“Arrey, it is light captured on a sensor.”</em></p>
+<p>He said, <em>“Okay but what does the phone store? It does not store light.”</em></p>
+<p>I had no answer. I had been taking photos for two years and I had no idea what the phone was actually saving. I just knew it looked nice on Instagram.</p>
+<p>Years later when I started working in computer vision I realised — most people who write OpenCV code are exactly like me that day. They know it looks nice. They have no idea what it actually is.</p>
+</div>
+<p>So let us fix that. Right now.</p>
+<hr>
 </section>
-<section id="find-me-elsewhere" class="level3">
-<h3 class="anchored" data-anchor-id="find-me-elsewhere">Find me elsewhere</h3>
+<section id="what-a-computer-sees-when-it-looks-at-an-image" class="level2">
+<h2 class="anchored" data-anchor-id="what-a-computer-sees-when-it-looks-at-an-image">What a computer sees when it looks at an image</h2>
+<p>You look at a photo and you see a mountain, a face, a cup of chai.</p>
+<p>The computer sees none of that. It sees a <strong>grid of numbers</strong>.</p>
+<p>That is it. An image to a computer is nothing more than a rectangular grid of numbers. Each number represents how bright or what colour one tiny dot is. That tiny dot is called a <strong>pixel</strong> — short for <em>picture element</em>.</p>
+<p>Let’s make this concrete with code.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a tiny 5x5 grayscale image manually</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>tiny_image <span class="op">=</span> np.array([</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">0</span>,   <span class="dv">0</span>,   <span class="dv">0</span>,   <span class="dv">0</span>,   <span class="dv">0</span>  ],</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">0</span>,   <span class="dv">128</span>, <span class="dv">128</span>, <span class="dv">128</span>, <span class="dv">0</span>  ],</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">0</span>,   <span class="dv">128</span>, <span class="dv">255</span>, <span class="dv">128</span>, <span class="dv">0</span>  ],</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">0</span>,   <span class="dv">128</span>, <span class="dv">128</span>, <span class="dv">128</span>, <span class="dv">0</span>  ],</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">0</span>,   <span class="dv">0</span>,   <span class="dv">0</span>,   <span class="dv">0</span>,   <span class="dv">0</span>  ]</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>], dtype<span class="op">=</span>np.uint8)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">4</span>))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.imshow(tiny_image, cmap<span class="op">=</span><span class="st">'gray'</span>, vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">255</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"A 5×5 image"</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Shape:"</span>, tiny_image.shape)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data type:"</span>, tiny_image.dtype)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Min value:"</span>, tiny_image.<span class="bu">min</span>(), <span class="st">"| Max value:"</span>, tiny_image.<span class="bu">max</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Run this and you will see a tiny dark square with a slightly brighter centre. That is your image. Those numbers are your image. The grid of numbers IS the image — there is nothing else.</p>
+<hr>
+</section>
+<section id="the-meaning-of-those-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="the-meaning-of-those-numbers">The meaning of those numbers</h2>
+<p>In a grayscale image, each pixel is a single number between <strong>0 and 255</strong>.</p>
 <ul>
-<li><a href="https://dev.to/rdx099">dev.to/rdx099</a> — cross-posted articles</li>
-<li><a href="https://github.com/RDx099/">github.com/RDx099</a> — code repositories for every post</li>
-<li><a href="https://x.com/RDx099">x.com/RDx099</a> — occasional thoughts</li>
+<li><strong>0</strong> means completely black</li>
+<li><strong>255</strong> means completely white</li>
+<li>Everything in between is a shade of grey</li>
 </ul>
-
-
+<p>Why 255? Because a pixel value is stored in <strong>8 bits</strong> (1 byte). The maximum value 8 bits can hold is 2⁸ - 1 = <strong>255</strong>. This is not a coincidence or an arbitrary choice — it is a direct consequence of how computers store data.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let us verify this</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>pixel_value <span class="op">=</span> np.uint8(<span class="dv">200</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Pixel value: </span><span class="sc">{</span>pixel_value<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"In binary: </span><span class="sc">{</span><span class="bu">bin</span>(pixel_value)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Bits used: 8"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Max possible: </span><span class="sc">{</span>np<span class="sc">.</span>iinfo(np.uint8)<span class="sc">.</span><span class="bu">max</span><span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Why does this matter?</strong> When you normalise your image for a neural network by dividing by 255, you now know <em>exactly</em> why. You are mapping the range [0, 255] to [0.0, 1.0]. Every value becomes a fraction of the maximum possible brightness.</p>
+</div>
+</div>
+<hr>
 </section>
+<section id="colour-images-three-grids-not-one" class="level2">
+<h2 class="anchored" data-anchor-id="colour-images-three-grids-not-one">Colour images — three grids, not one</h2>
+<p>A grayscale image is one grid of numbers. A colour image is <strong>three grids stacked together</strong>.</p>
+<p>Each grid is called a <strong>channel</strong>. The three channels represent:</p>
+<ul>
+<li><strong>R</strong> — how much Red is in each pixel</li>
+<li><strong>G</strong> — how much Green is in each pixel</li>
+<li><strong>B</strong> — how much Blue is in each pixel</li>
+</ul>
+<p>Together, RGB can represent approximately 16.7 million colours (256 × 256 × 256).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load a colour image</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> io <span class="im">import</span> BytesIO</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a simple colour image manually to see the channels clearly</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>colour_image <span class="op">=</span> np.zeros((<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">3</span>), dtype<span class="op">=</span>np.uint8)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>colour_image[:, :, <span class="dv">0</span>] <span class="op">=</span> <span class="dv">200</span>   <span class="co"># Red channel — strong</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>colour_image[:, :, <span class="dv">1</span>] <span class="op">=</span> <span class="dv">80</span>    <span class="co"># Green channel — medium  </span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>colour_image[:, :, <span class="dv">2</span>] <span class="op">=</span> <span class="dv">20</span>    <span class="co"># Blue channel — weak</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">4</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">4</span>))</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].imshow(colour_image)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">"Original colour"</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].axis(<span class="st">'off'</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>channel_names <span class="op">=</span> [<span class="st">'Red channel'</span>, <span class="st">'Green channel'</span>, <span class="st">'Blue channel'</span>]</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>cmaps <span class="op">=</span> [<span class="st">'Reds'</span>, <span class="st">'Greens'</span>, <span class="st">'Blues'</span>]</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    axes[i<span class="op">+</span><span class="dv">1</span>].imshow(colour_image[:, :, i], cmap<span class="op">=</span>cmaps[i])</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    axes[i<span class="op">+</span><span class="dv">1</span>].set_title(channel_names[i])</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    axes[i<span class="op">+</span><span class="dv">1</span>].axis(<span class="st">'off'</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Shape of colour image:"</span>, colour_image.shape)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: (100, 100, 3)</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Height=100, Width=100, Channels=3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Notice the shape — <code>(100, 100, 3)</code>. This is the most important thing to understand about images in Python: <strong>height comes first, then width, then channels</strong>. Not width first. Height first. This trips up almost every beginner when they start working with image dimensions.</p>
+<hr>
+</section>
+<section id="what-the-shape-tells-you" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-shape-tells-you">What the shape tells you</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> cv2.imread(<span class="st">'your_image.jpg'</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(img.shape)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># (480, 640, 3)</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#   ^    ^   ^</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#   |    |   channels (3 = colour, 1 = grayscale)</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#   |    width in pixels</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#   height in pixels</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Every time you load an image, read its shape first. Make it a habit. The shape tells you everything: how big the image is, whether it is colour or grayscale, and how much memory it will consume.</p>
+<p>Memory consumed by one image = height × width × channels × bytes per pixel</p>
+<p>For a standard colour image: <code>480 × 640 × 3 × 1 byte = ~921,600 bytes ≈ 0.9 MB</code></p>
+<hr>
+</section>
+<section id="one-important-warning-about-opencv" class="level2">
+<h2 class="anchored" data-anchor-id="one-important-warning-about-opencv">One important warning about OpenCV</h2>
+<p>If you use OpenCV to load images, there is one thing that will confuse you every single time until you know about it:</p>
+<p><strong>OpenCV loads images in BGR order, not RGB.</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>img_bgr <span class="op">=</span> cv2.imread(<span class="st">'your_image.jpg'</span>)   <span class="co"># OpenCV — loads as BGR</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>img_rgb <span class="op">=</span> cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)  <span class="co"># Convert to RGB</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># If you show img_bgr with matplotlib — colours will look wrong</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># If you show img_rgb with matplotlib — colours will look correct</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>plt.imshow(img_bgr)   <span class="co"># Wrong colours — blue and red are swapped</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>plt.imshow(img_rgb)   <span class="co"># Correct colours</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This single fact causes more confusion in beginner CV code than almost anything else. Red and blue channels are swapped. OpenCV does it for historical reasons. Just remember: <strong>OpenCV = BGR. Everything else = RGB.</strong></p>
+<hr>
+</section>
+<section id="what-you-should-now-be-able-to-say" class="level2">
+<h2 class="anchored" data-anchor-id="what-you-should-now-be-able-to-say">What you should now be able to say</h2>
+<p>Before this post, you knew an image was “a file you open with OpenCV.”</p>
+<p>Now you know:</p>
+<ul>
+<li>An image is a rectangular grid of numbers</li>
+<li>Each number is a pixel value between 0 and 255</li>
+<li>Grayscale images have 1 channel, colour images have 3</li>
+<li>The shape of an image array is <code>(height, width, channels)</code></li>
+<li>OpenCV loads in BGR, not RGB — always convert before displaying</li>
+</ul>
+<p>This is the foundation. Everything in computer vision — convolutions, feature detection, neural networks — operates on this grid of numbers. The better you understand the grid, the better you will understand everything built on top of it.</p>
+<hr>
+<p><em>Next in First Principles → <strong>Why Does Color Space Matter?</strong> — RGB, HSV, LAB, and when using the wrong one silently ruins your results.</em></p>
+
+
 </section>
 
 </main> <!-- /main -->

@@ -10,5 +10,23 @@
   },
   "posts/welcome/index.qmd": {
     "index.html": "178c6976"
+  },
+  "mnt/user-data/outputs/posts/what-is-a-picture/index.qmd": {
+    "index.html": "961d33ce"
+  },
+  "cv-algorithms.qmd": {
+    "cv-algorithms.html": "e3228c6f"
+  },
+  "datasets.qmd": {
+    "datasets.html": "d71cba0d"
+  },
+  "first-principles.qmd": {
+    "first-principles.html": "1f925c14"
+  },
+  "ml-concepts.qmd": {
+    "ml-concepts.html": "7ef233cd"
+  },
+  "paper-to-code.qmd": {
+    "paper-to-code.html": "91465b91"
   }
 }

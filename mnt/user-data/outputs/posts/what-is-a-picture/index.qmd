@@ -1,0 +1,212 @@
+---
+title: "What is a Picture?"
+description: "Before you open OpenCV, understand what you are actually looking at"
+author: "Rahul Dev Singh"
+date: "2025-03-14"
+categories: [first-principles]
+image: cover.png
+toc: true
+---
+
+## A story first
+
+::: {.story-box}
+When I got my first smartphone, I became obsessed with photography. I would click pictures of everything — chai, sunsets, my neighbour's cat. One day my younger brother asked me, *"Bhaiya, what actually is a photo? Like what is it made of?"*
+
+I said, *"Arrey, it is light captured on a sensor."*
+
+He said, *"Okay but what does the phone store? It does not store light."*
+
+I had no answer. I had been taking photos for two years and I had no idea what the phone was actually saving. I just knew it looked nice on Instagram.
+
+Years later when I started working in computer vision I realised — most people who write OpenCV code are exactly like me that day. They know it looks nice. They have no idea what it actually is.
+:::
+
+So let us fix that. Right now.
+
+---
+
+## What a computer sees when it looks at an image
+
+You look at a photo and you see a mountain, a face, a cup of chai.
+
+The computer sees none of that. It sees a **grid of numbers**.
+
+That is it. An image to a computer is nothing more than a rectangular grid of numbers. Each number represents how bright or what colour one tiny dot is. That tiny dot is called a **pixel** — short for *picture element*.
+
+Let's make this concrete with code.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create a tiny 5x5 grayscale image manually
+tiny_image = np.array([
+    [0,   0,   0,   0,   0  ],
+    [0,   128, 128, 128, 0  ],
+    [0,   128, 255, 128, 0  ],
+    [0,   128, 128, 128, 0  ],
+    [0,   0,   0,   0,   0  ]
+], dtype=np.uint8)
+
+plt.figure(figsize=(4, 4))
+plt.imshow(tiny_image, cmap='gray', vmin=0, vmax=255)
+plt.title("A 5×5 image")
+plt.axis('off')
+plt.show()
+
+print("Shape:", tiny_image.shape)
+print("Data type:", tiny_image.dtype)
+print("Min value:", tiny_image.min(), "| Max value:", tiny_image.max())
+```
+
+Run this and you will see a tiny dark square with a slightly brighter centre. That is your image. Those numbers are your image. The grid of numbers IS the image — there is nothing else.
+
+---
+
+## The meaning of those numbers
+
+In a grayscale image, each pixel is a single number between **0 and 255**.
+
+- **0** means completely black
+- **255** means completely white
+- Everything in between is a shade of grey
+
+Why 255? Because a pixel value is stored in **8 bits** (1 byte). The maximum value 8 bits can hold is 2⁸ - 1 = **255**. This is not a coincidence or an arbitrary choice — it is a direct consequence of how computers store data.
+
+```python
+# Let us verify this
+import numpy as np
+
+pixel_value = np.uint8(200)
+print(f"Pixel value: {pixel_value}")
+print(f"In binary: {bin(pixel_value)}")
+print(f"Bits used: 8")
+print(f"Max possible: {np.iinfo(np.uint8).max}")
+```
+
+::: {.callout-note}
+**Why does this matter?** When you normalise your image for a neural network by dividing by 255, you now know *exactly* why. You are mapping the range [0, 255] to [0.0, 1.0]. Every value becomes a fraction of the maximum possible brightness.
+:::
+
+---
+
+## Colour images — three grids, not one
+
+A grayscale image is one grid of numbers. A colour image is **three grids stacked together**.
+
+Each grid is called a **channel**. The three channels represent:
+
+- **R** — how much Red is in each pixel
+- **G** — how much Green is in each pixel
+- **B** — how much Blue is in each pixel
+
+Together, RGB can represent approximately 16.7 million colours (256 × 256 × 256).
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Load a colour image
+from PIL import Image
+import requests
+from io import BytesIO
+
+# Create a simple colour image manually to see the channels clearly
+colour_image = np.zeros((100, 100, 3), dtype=np.uint8)
+colour_image[:, :, 0] = 200   # Red channel — strong
+colour_image[:, :, 1] = 80    # Green channel — medium  
+colour_image[:, :, 2] = 20    # Blue channel — weak
+
+fig, axes = plt.subplots(1, 4, figsize=(14, 4))
+
+axes[0].imshow(colour_image)
+axes[0].set_title("Original colour")
+axes[0].axis('off')
+
+channel_names = ['Red channel', 'Green channel', 'Blue channel']
+cmaps = ['Reds', 'Greens', 'Blues']
+
+for i in range(3):
+    axes[i+1].imshow(colour_image[:, :, i], cmap=cmaps[i])
+    axes[i+1].set_title(channel_names[i])
+    axes[i+1].axis('off')
+
+plt.tight_layout()
+plt.show()
+
+print("Shape of colour image:", colour_image.shape)
+# Output: (100, 100, 3)
+# Height=100, Width=100, Channels=3
+```
+
+Notice the shape — `(100, 100, 3)`. This is the most important thing to understand about images in Python: **height comes first, then width, then channels**. Not width first. Height first. This trips up almost every beginner when they start working with image dimensions.
+
+---
+
+## What the shape tells you
+
+```python
+import cv2
+
+img = cv2.imread('your_image.jpg')
+print(img.shape)
+# (480, 640, 3)
+#   ^    ^   ^
+#   |    |   channels (3 = colour, 1 = grayscale)
+#   |    width in pixels
+#   height in pixels
+```
+
+Every time you load an image, read its shape first. Make it a habit. The shape tells you everything: how big the image is, whether it is colour or grayscale, and how much memory it will consume.
+
+Memory consumed by one image = height × width × channels × bytes per pixel
+
+For a standard colour image: `480 × 640 × 3 × 1 byte = ~921,600 bytes ≈ 0.9 MB`
+
+---
+
+## One important warning about OpenCV
+
+If you use OpenCV to load images, there is one thing that will confuse you every single time until you know about it:
+
+**OpenCV loads images in BGR order, not RGB.**
+
+```python
+import cv2
+import matplotlib.pyplot as plt
+
+img_bgr = cv2.imread('your_image.jpg')   # OpenCV — loads as BGR
+img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)  # Convert to RGB
+
+# If you show img_bgr with matplotlib — colours will look wrong
+# If you show img_rgb with matplotlib — colours will look correct
+
+plt.imshow(img_bgr)   # Wrong colours — blue and red are swapped
+plt.show()
+
+plt.imshow(img_rgb)   # Correct colours
+plt.show()
+```
+
+This single fact causes more confusion in beginner CV code than almost anything else. Red and blue channels are swapped. OpenCV does it for historical reasons. Just remember: **OpenCV = BGR. Everything else = RGB.**
+
+---
+
+## What you should now be able to say
+
+Before this post, you knew an image was "a file you open with OpenCV."
+
+Now you know:
+
+- An image is a rectangular grid of numbers
+- Each number is a pixel value between 0 and 255
+- Grayscale images have 1 channel, colour images have 3
+- The shape of an image array is `(height, width, channels)`
+- OpenCV loads in BGR, not RGB — always convert before displaying
+
+This is the foundation. Everything in computer vision — convolutions, feature detection, neural networks — operates on this grid of numbers. The better you understand the grid, the better you will understand everything built on top of it.
+
+---
+
+*Next in First Principles → **Why Does Color Space Matter?** — RGB, HSV, LAB, and when using the wrong one silently ruins your results.*

@@ -2,18 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://your-website-url.example.com/posts/welcome/index.html</loc>
-    <lastmod>2026-03-14T14:51:09.993Z</lastmod>
+    <lastmod>2026-03-14T15:40:00.806Z</lastmod>
   </url>
   <url>
     <loc>https://your-website-url.example.com/index.html</loc>
-    <lastmod>2026-03-14T14:51:09.993Z</lastmod>
+    <lastmod>2026-03-14T15:40:00.802Z</lastmod>
   </url>
   <url>
     <loc>https://your-website-url.example.com/about.html</loc>
-    <lastmod>2026-03-14T14:51:09.997Z</lastmod>
+    <lastmod>2026-03-14T15:40:00.802Z</lastmod>
   </url>
   <url>
     <loc>https://your-website-url.example.com/posts/post-with-code/index.html</loc>
-    <lastmod>2026-03-14T14:51:09.997Z</lastmod>
+    <lastmod>2026-03-14T15:40:00.804Z</lastmod>
+  </url>
+  <url>
+    <loc>https://RDx099.github.io/mnt/user-data/outputs/posts/what-is-a-picture/index.html</loc>
+    <lastmod>2026-03-14T16:05:05.939Z</lastmod>
+  </url>
+  <url>
+    <loc>https://RDx099.github.io/about.html</loc>
+    <lastmod>2026-03-14T15:52:14.847Z</lastmod>
+  </url>
+  <url>
+    <loc>https://RDx099.github.io/index.html</loc>
+    <lastmod>2026-03-14T16:05:05.798Z</lastmod>
+  </url>
+  <url>
+    <loc>https://RDx099.github.io/paper-to-code.html</loc>
+    <lastmod>2026-03-14T16:05:05.864Z</lastmod>
+  </url>
+  <url>
+    <loc>https://RDx099.github.io/first-principles.html</loc>
+    <lastmod>2026-03-14T16:05:05.817Z</lastmod>
+  </url>
+  <url>
+    <loc>https://RDx099.github.io/cv-algorithms.html</loc>
+    <lastmod>2026-03-14T16:05:05.852Z</lastmod>
+  </url>
+  <url>
+    <loc>https://RDx099.github.io/datasets.html</loc>
+    <lastmod>2026-03-14T16:05:05.880Z</lastmod>
+  </url>
+  <url>
+    <loc>https://RDx099.github.io/ml-concepts.html</loc>
+    <lastmod>2026-03-14T16:05:05.837Z</lastmod>
   </url>
 </urlset>

@@ -1,23 +1,66 @@
 project:
   type: website
+  output-dir: _site
 
 website:
-  description: "A blog built with Quarto"
-  site-url: https://your-website-url.example.com # you must change this appropriately for RSS feeds to work properly
-  title: "pixels-and-principles"
+  title: "Pixels & Principles"
+  description: "First principles for computer vision. Paper-to-code walkthroughs. Stories that make concepts stick."
+  site-url: https://RDx099.github.io
+
   navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Series"
+        menu:
+          - text: "A — First Principles"
+            href: first-principles.qmd
+          - text: "B — ML Concepts"
+            href: ml-concepts.qmd
+          - text: "C — CV Algorithms"
+            href: cv-algorithms.qmd
+          - text: "D — Paper to Code"
+            href: paper-to-code.qmd
+          - text: "E — Data and Datasets"
+            href: datasets.qmd
+      - text: "About"
+        href: about.qmd
     right:
-      - about.qmd
       - icon: github
-        href: https://github.com/
-      - icon: bluesky
-        href: https://bsky.app/
+        href: https://github.com/RDx099/
+        aria-label: GitHub
+      - icon: twitter
+        href: https://x.com/RDx099
+        aria-label: X
+      - text: "dev.to"
+        href: https://dev.to/rdx099
+
+  page-footer:
+    left: "© 2025 Rahul Dev Singh — Pixels & Principles"
+    right:
+      - text: "GitHub"
+        href: https://github.com/RDx099/
+      - text: "dev.to"
+        href: https://dev.to/rdx099
+      - text: "X"
+        href: https://x.com/RDx099
+
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      light: flatly
+      dark: darkly
     css: styles.css
+    highlight-style: github
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+    toc-depth: 3
+    toc-title: "In this post"
+    link-external-newwindow: true
+    fig-align: center
 
-
-
+execute:
+  freeze: auto
+  echo: true
+  warning: false

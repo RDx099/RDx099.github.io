@@ -1,0 +1,28 @@
+---
+title: "CV Algorithms"
+subtitle: "Classical and modern algorithms built from scratch"
+page-layout: full
+toc: false
+listing:
+  contents: posts
+  sort: "date asc"
+  type: default
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  include:
+    categories: "{cv-algorithms}"
+  fields: [date, title, description, reading-time]
+---
+
+```{=html}
+<div class="pp-series-hero">
+  <span class="pp-series-badge badge-c">Series C</span>
+  <p class="pp-series-intro">
+    Edge detection, feature matching, segmentation, optical flow, object detection — the algorithms that define computer vision. Not just how to call them, but how they actually work and why they were designed that way.
+  </p>
+  <div class="pp-series-nav">
+    <a href="index.html">← All Series</a>
+  </div>
+</div>
+```

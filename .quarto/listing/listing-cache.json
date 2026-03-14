@@ -2,6 +2,21 @@
   "listingMap": {
     "index.qmd": [
       "posts"
+    ],
+    "cv-algorithms.qmd": [
+      "posts"
+    ],
+    "datasets.qmd": [
+      "posts"
+    ],
+    "first-principles.qmd": [
+      "posts"
+    ],
+    "ml-concepts.qmd": [
+      "posts"
+    ],
+    "paper-to-code.qmd": [
+      "posts"
     ]
   }
 }

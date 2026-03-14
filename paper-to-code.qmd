@@ -1,0 +1,28 @@
+---
+title: "Paper → Code"
+subtitle: "The paper said it works. Let me show you how."
+page-layout: full
+toc: false
+listing:
+  contents: posts
+  sort: "date asc"
+  type: default
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  include:
+    categories: "{paper-to-code}"
+  fields: [date, title, description, reading-time]
+---
+
+```{=html}
+<div class="pp-series-hero">
+  <span class="pp-series-badge badge-d">Series D</span>
+  <p class="pp-series-intro">
+    Research papers with no public code, unclear implementations, or MATLAB-only repositories — implemented cleanly in Python for graduate students. Every post walks through the paper's key idea, the maths behind it, and a working implementation you can actually run.
+  </p>
+  <div class="pp-series-nav">
+    <a href="index.html">← All Series</a>
+  </div>
+</div>
+```

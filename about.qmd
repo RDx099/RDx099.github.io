@@ -1,19 +1,24 @@
 ---
 title: "About"
-image: profile.jpg
-about:
-  template: jolla
-  links:
-    - icon: bluesky
-      text: Bluesky
-      href: https://bsky.app/
-    - icon: linkedin
-      text: LinkedIn
-      href: https://linkedin.com
-    - icon: github
-      text: Github
-      href: https://github.com
-
+toc: false
 ---
 
-About this blog
+## Rahul Dev Singh
+
+**Hungry for Teaching.**
+
+I have spent years watching students confidently use big words — convolution, embedding, gradient descent — without truly understanding what is happening underneath. This blog exists to fix that.
+
+Every post starts with a story. Sometimes from history. Sometimes from my own embarrassing past. The concept arrives last, after the story has already landed in your memory. By the time we get to the technical part, you already have a hook to hang it on.
+
+### What you will find here
+
+**First Principles** — the things everyone assumes you know but nobody ever properly explained. One concept per post, done deeply.
+
+**Paper → Code** — research papers that changed computer vision, implemented clearly from scratch. No MATLAB. No "see the official repo." Just clean, readable Python with explanation.
+
+### Find me elsewhere
+
+- [dev.to/rdx099](https://dev.to/rdx099) — cross-posted articles
+- [github.com/RDx099](https://github.com/RDx099/) — code repositories for every post
+- [x.com/RDx099](https://x.com/RDx099) — occasional thoughts

@@ -1,0 +1,28 @@
+---
+title: "ML Concepts"
+subtitle: "The machine learning ideas that power every modern CV system"
+page-layout: full
+toc: false
+listing:
+  contents: posts
+  sort: "date asc"
+  type: default
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  include:
+    categories: "{ml-concepts}"
+  fields: [date, title, description, reading-time]
+---
+
+```{=html}
+<div class="pp-series-hero">
+  <span class="pp-series-badge badge-b">Series B</span>
+  <p class="pp-series-intro">
+    Loss functions, overfitting, regularisation, batch normalisation, attention mechanisms — the core ML ideas that students name-drop without truly understanding. This series assumes you are comfortable with Series A. Each post answers one question properly.
+  </p>
+  <div class="pp-series-nav">
+    <a href="index.html">← All Series</a>
+  </div>
+</div>
+```

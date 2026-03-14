@@ -1,0 +1,28 @@
+---
+title: "First Principles"
+subtitle: "The things nobody explained but everyone assumes you know"
+page-layout: full
+toc: false
+listing:
+  contents: posts
+  sort: "date asc"
+  type: default
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  include:
+    categories: "{first-principles}"
+  fields: [date, title, description, reading-time]
+---
+
+```{=html}
+<div class="pp-series-hero">
+  <span class="pp-series-badge badge-a">Series A</span>
+  <p class="pp-series-intro">
+    Big words. Small foundations. Every post in this series takes one concept that students use confidently without truly understanding, and rebuilds it from the ground up. One concept per post. No prerequisites except curiosity.
+  </p>
+  <div class="pp-series-nav">
+    <a href="index.html">← All Series</a>
+  </div>
+</div>
+```

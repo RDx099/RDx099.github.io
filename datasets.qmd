@@ -1,0 +1,28 @@
+---
+title: "Data & Datasets"
+subtitle: "Understanding your data before you train anything"
+page-layout: full
+toc: false
+listing:
+  contents: posts
+  sort: "date asc"
+  type: default
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  include:
+    categories: "{datasets}"
+  fields: [date, title, description, reading-time]
+---
+
+```{=html}
+<div class="pp-series-hero">
+  <span class="pp-series-badge badge-e">Series E</span>
+  <p class="pp-series-intro">
+    COCO, ImageNet, Open Images, annotation formats, dataset bias, train/val splits, augmentation strategies — the data side of CV that most tutorials skip entirely. These posts can be read independently of any other series.
+  </p>
+  <div class="pp-series-nav">
+    <a href="index.html">← All Series</a>
+  </div>
+</div>
+```

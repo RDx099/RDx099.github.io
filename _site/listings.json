@@ -5,5 +5,27 @@
       "/posts/post-with-code/index.html",
       "/posts/welcome/index.html"
     ]
+  },
+  {
+    "listing": "/paper-to-code.html",
+    "items": []
+  },
+  {
+    "listing": "/first-principles.html",
+    "items": [
+      "/mnt/user-data/outputs/posts/what-is-a-picture/index.html"
+    ]
+  },
+  {
+    "listing": "/cv-algorithms.html",
+    "items": []
+  },
+  {
+    "listing": "/datasets.html",
+    "items": []
+  },
+  {
+    "listing": "/ml-concepts.html",
+    "items": []
   }
 ]

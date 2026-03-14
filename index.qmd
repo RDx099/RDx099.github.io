@@ -1,15 +1,67 @@
 ---
-title: "pixels-and-principles"
-listing:
-  contents: posts
-  feed: true
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
+title: ""
 page-layout: full
-title-block-banner: true
+toc: false
 ---
 
+```{=html}
+<div class="pp-hero">
+  <div class="pp-site-label">Computer Vision · Deep Learning · Research</div>
+  <h1 class="pp-title">Pixels &amp; Principles</h1>
+  <p class="pp-tagline">First principles for computer vision. Paper-to-code walkthroughs.<br>Stories that make concepts stick — by Rahul Dev Singh.</p>
+</div>
 
+<div class="pp-series-grid">
+
+  <a href="first-principles.html" class="pp-series-card">
+    <div class="pp-card-tag tag-a">Series A</div>
+    <div class="pp-card-title">First Principles</div>
+    <div class="pp-card-desc">The things nobody explained but everyone assumes you know. Images, pixels, convolutions, normalisation — done properly.</div>
+    <div class="pp-card-footer">
+      <span class="pp-post-count">1 post</span>
+      <span class="pp-card-arrow">→</span>
+    </div>
+  </a>
+
+  <a href="ml-concepts.html" class="pp-series-card">
+    <div class="pp-card-tag tag-b">Series B</div>
+    <div class="pp-card-title">ML Concepts</div>
+    <div class="pp-card-desc">Loss functions, overfitting, batch norm, attention — the machine learning ideas that power every modern CV system.</div>
+    <div class="pp-card-footer">
+      <span class="pp-post-count">Coming soon</span>
+      <span class="pp-card-arrow">→</span>
+    </div>
+  </a>
+
+  <a href="cv-algorithms.html" class="pp-series-card">
+    <div class="pp-card-tag tag-c">Series C</div>
+    <div class="pp-card-title">CV Algorithms</div>
+    <div class="pp-card-desc">Edge detection, feature matching, segmentation, object detection — classical and modern algorithms built from scratch.</div>
+    <div class="pp-card-footer">
+      <span class="pp-post-count">Coming soon</span>
+      <span class="pp-card-arrow">→</span>
+    </div>
+  </a>
+
+  <a href="paper-to-code.html" class="pp-series-card">
+    <div class="pp-card-tag tag-d">Series D</div>
+    <div class="pp-card-title">Paper → Code</div>
+    <div class="pp-card-desc">Research papers that changed CV, implemented clearly for graduate students. No MATLAB. No missing details. Just clean Python.</div>
+    <div class="pp-card-footer">
+      <span class="pp-post-count">Coming soon</span>
+      <span class="pp-card-arrow">→</span>
+    </div>
+  </a>
+
+  <a href="datasets.html" class="pp-series-card">
+    <div class="pp-card-tag tag-e">Series E</div>
+    <div class="pp-card-title">Data &amp; Datasets</div>
+    <div class="pp-card-desc">COCO, ImageNet, annotation formats, dataset bias, augmentation — understanding your data before you train anything.</div>
+    <div class="pp-card-footer">
+      <span class="pp-post-count">Coming soon</span>
+      <span class="pp-card-arrow">→</span>
+    </div>
+  </a>
+
+</div>
+```
