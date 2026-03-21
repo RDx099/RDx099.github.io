@@ -23,9 +23,9 @@
   {
     "objectID": "posts/post-with-code/index.html",
     "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "title": "What is a Picture?",
     "section": "",
-    "text": "This is a post with executable code."
+    "text": "When I got my first smartphone, I became obsessed with photography. I would click pictures of everything — chai, sunsets, my neighbour’s cat. One day my younger brother asked me, “Bhaiya, what actually is a photo? Like, what is it made of?”\nI said, “Arrey, it is light captured on a sensor.”\nHe said, “Okay but what does the phone store? It does not store light.”\nI had no answer. I had been taking photos for two years and I had no idea what the phone was actually saving. I just knew it looked nice on Instagram.\nYears later when I started working in computer vision I realised — most people who write OpenCV code are exactly like me that day. They know it looks nice. They have no idea what it actually is.\nSo let us fix that. Right now."
   },
   {
     "objectID": "mnt/user-data/outputs/posts/what-is-a-picture/index.html",
@@ -102,7 +102,7 @@
     "href": "first-principles.html",
     "title": "First Principles",
     "section": "",
-    "text": "Series A\n  \n    Big words. Small foundations. Every post in this series takes one concept that students use confidently without truly understanding, and rebuilds it from the ground up. One concept per post. No prerequisites except curiosity.\n  \n  \n    ← All Series\n  \n\n\n\n\n\n\n\n\n\n\nWhat is a Picture?\n\n\nBefore you open OpenCV, understand what you are actually looking at\n\n\n\n\n\nMar 14, 2025\n\n6 min\n\n\n\n\nNo matching items"
+    "text": "Series A\n  \n    Big words. Small foundations. Every post in this series takes one concept that students use confidently without truly understanding, and rebuilds it from the ground up. One concept per post. No prerequisites except curiosity.\n  \n  \n    ← All Series\n  \n\n\n\n\n\n\n\n\n\n\nWhat is a Picture?\n\n\nBefore you open OpenCV, understand what you are actually looking at\n\n\n\n\n\nMar 14, 2025\n\n14 min\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "cv-algorithms.html",
@@ -124,5 +124,138 @@
     "title": "ML Concepts",
     "section": "",
     "text": "Series B\n  \n    Loss functions, overfitting, regularisation, batch normalisation, attention mechanisms — the core ML ideas that students name-drop without truly understanding. This series assumes you are comfortable with Series A. Each post answers one question properly.\n  \n  \n    ← All Series\n  \n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#a-story-first",
+    "href": "posts/post-with-code/index.html#a-story-first",
+    "title": "What is a Picture?",
+    "section": "",
+    "text": "When I got my first smartphone, I became obsessed with photography. I would click pictures of everything — chai, sunsets, my neighbour’s cat. One day my younger brother asked me, “Bhaiya, what actually is a photo? Like, what is it made of?”\nI said, “Arrey, it is light captured on a sensor.”\nHe said, “Okay but what does the phone store? It does not store light.”\nI had no answer. I had been taking photos for two years and I had no idea what the phone was actually saving. I just knew it looked nice on Instagram.\nYears later when I started working in computer vision I realised — most people who write OpenCV code are exactly like me that day. They know it looks nice. They have no idea what it actually is.\nSo let us fix that. Right now."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#what-you-see-vs-what-the-computer-sees",
+    "href": "posts/post-with-code/index.html#what-you-see-vs-what-the-computer-sees",
+    "title": "What is a Picture?",
+    "section": "What you see vs what the computer sees",
+    "text": "What you see vs what the computer sees\nYou look at a photo and you see a mountain, a face, a cup of chai.\n\n\n\nA cup of chai — something you recognise instantly\n\n\nThe computer sees none of that. It sees a grid of numbers. That is it. Nothing more.\nEach tiny dot in that grid is called a pixel — short for picture element. And each pixel is just a number — representing how bright or what colour that dot is.\nHere is the same cup of chai, shown the way a computer actually sees it — as raw numbers:\n\n\n\nA tiny 8×8 patch from the image — each number is one pixel's brightness (0=black, 255=white)\n\n\n210\n198\n174\n195\n212\n220\n228\n218\n\n\n142\n158\n168\n138\n122\n148\n162\n155\n\n\n82\n98\n118\n90\n76\n94\n112\n105\n\n\n188\n205\n195\n182\n206\n215\n222\n206\n\n\n\n\n\nThat table above — those are actual brightness values. That is what the computer is working with when it “looks” at your chai photo. No shapes. No objects. No meaning. Just numbers."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#try-it-yourself-your-image-your-numbers",
+    "href": "posts/post-with-code/index.html#try-it-yourself-your-image-your-numbers",
+    "title": "What is a Picture?",
+    "section": "Try it yourself — your image, your numbers",
+    "text": "Try it yourself — your image, your numbers\nUpload any image and see exactly what a computer sees. The widget below takes a small patch from your image and shows you the raw pixel values.\n\n\n  \n    Upload any image\n    \n  \n\n  \n\n    \n\n      \n        What you see\n        \n        \n      \n\n      \n        What the computer sees — pixel values\n        \n        Showing a 10×10 patch from the top-left corner\n      \n\n    \n\n    \n      Colour channels\n      \n      \n    \n\n    \n    \n\n  \n\n  \n    Upload an image above to explore its pixel values"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#the-meaning-of-those-numbers",
+    "href": "posts/post-with-code/index.html#the-meaning-of-those-numbers",
+    "title": "What is a Picture?",
+    "section": "The meaning of those numbers",
+    "text": "The meaning of those numbers\nIn a grayscale image, each pixel is a single number between 0 and 255.\n\n0 means completely black\n255 means completely white\nEverything in between is a shade of grey\n\nWhy 255? Because a pixel value is stored in 8 bits (1 byte). The maximum value 8 bits can hold is 2⁸ − 1 = 255. This is not arbitrary — it is a direct consequence of how computers store data.\nimport numpy as np\n\npixel_value = np.uint8(200)\nprint(f\"Pixel value:   {pixel_value}\")\nprint(f\"In binary:     {bin(pixel_value)}\")\nprint(f\"Max possible:  {np.iinfo(np.uint8).max}\")\nOutput:\nPixel value:   200\nIn binary:     0b11001000\nMax possible:  255\n\n\n\n\n\n\nNote\n\n\n\nWhy does this matter? When you normalise your image for a neural network by dividing by 255, you now know exactly why. You are mapping the range [0, 255] to [0.0, 1.0]. Every value becomes a fraction of the maximum possible brightness."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#creating-and-reading-an-image-as-numbers",
+    "href": "posts/post-with-code/index.html#creating-and-reading-an-image-as-numbers",
+    "title": "What is a Picture?",
+    "section": "Creating and reading an image as numbers",
+    "text": "Creating and reading an image as numbers\nLet us make this concrete. We will create a tiny 5×5 image entirely from scratch using just numbers — no camera, no file.\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Create a tiny 5x5 grayscale image manually — just numbers\ntiny_image = np.array([\n    [  0,   0,   0,   0,   0],\n    [  0, 128, 128, 128,   0],\n    [  0, 128, 255, 128,   0],\n    [  0, 128, 128, 128,   0],\n    [  0,   0,   0,   0,   0]\n], dtype=np.uint8)\n\nprint(\"The image IS these numbers:\")\nprint(tiny_image)\nprint(\"\\nShape:\", tiny_image.shape)\nOutput:\nThe image IS these numbers:\n[[  0   0   0   0   0]\n [  0 128 128 128   0]\n [  0 128 255 128   0]\n [  0 128 128 128   0]\n [  0   0   0   0   0]]\n\nShape: (5, 5)\n# Now display it — matplotlib turns those numbers into a visible image\nplt.figure(figsize=(3, 3))\nplt.imshow(tiny_image, cmap='gray', vmin=0, vmax=255)\nplt.title(\"Our 5×5 image\")\nplt.axis('off')\nplt.show()\nOutput:\n\n\n\nA dark 5×5 square with a bright centre pixel — created entirely from numbers\n\n\nYou are looking at a dark square with a bright centre. That image does not come from a camera. It comes from the array of numbers we typed. The grid of numbers is the image — there is nothing else behind it."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#colour-images-three-grids-not-one",
+    "href": "posts/post-with-code/index.html#colour-images-three-grids-not-one",
+    "title": "What is a Picture?",
+    "section": "Colour images — three grids, not one",
+    "text": "Colour images — three grids, not one\nA grayscale image is one grid of numbers. A colour image is three grids stacked together.\nEach grid is called a channel. The three channels in a standard colour image represent:\n\nR — how much Red is in each pixel (0 to 255)\nG — how much Green is in each pixel (0 to 255)\nB — how much Blue is in each pixel (0 to 255)\n\nTogether, RGB can represent approximately 16.7 million colours (256 × 256 × 256).\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Create a 100x100 colour image — manually set each channel\ncolour_image = np.zeros((100, 100, 3), dtype=np.uint8)\ncolour_image[:, :, 0] = 200   # Red channel   — strong\ncolour_image[:, :, 1] = 80    # Green channel — medium\ncolour_image[:, :, 2] = 20    # Blue channel  — weak\n\nprint(\"Shape:\", colour_image.shape)\nprint(\"Red channel — sample values:\", colour_image[0, :5, 0])\nprint(\"Green channel — sample values:\", colour_image[0, :5, 1])\nprint(\"Blue channel — sample values:\", colour_image[0, :5, 2])\nOutput:\nShape: (100, 100, 3)\nRed channel — sample values:   [200 200 200 200 200]\nGreen channel — sample values: [ 80  80  80  80  80]\nBlue channel — sample values:  [ 20  20  20  20  20]\n# Plot the image and its three channels separately\nfig, axes = plt.subplots(1, 4, figsize=(14, 4))\n\naxes[0].imshow(colour_image)\naxes[0].set_title(\"Original colour\")\naxes[0].axis('off')\n\nnames = ['Red channel', 'Green channel', 'Blue channel']\ncmaps = ['Reds', 'Greens', 'Blues']\nfor i in range(3):\n    axes[i+1].imshow(colour_image[:, :, i], cmap=cmaps[i], vmin=0, vmax=255)\n    axes[i+1].set_title(names[i])\n    axes[i+1].axis('off')\n\nplt.tight_layout()\nplt.show()\nOutput:\n\n\n\nThe colour image split into its three individual channels — R, G, and B\n\n\nNotice the shape — (100, 100, 3). This tells you everything: height 100, width 100, and 3 channels. That third dimension is where colour lives.\n\n\n\n\n\n\nImportant\n\n\n\nChannels are not always 3. In the pixel explorer above you saw 3 channels — R, G, and B. But this number changes depending on the colour scheme used. An image can have 1 channel (Grayscale), 3 channels (RGB, BGR, or HSV), or 4 channels (RGBA — where the 4th channel stores transparency, like a PNG with a transparent background). We cover all of this properly in the next post."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#what-the-shape-tells-you",
+    "href": "posts/post-with-code/index.html#what-the-shape-tells-you",
+    "title": "What is a Picture?",
+    "section": "What the shape tells you",
+    "text": "What the shape tells you\nThe shape of an image array is the single most important thing to check every time you load an image.\nimport cv2\n\nimg = cv2.imread('your_image.jpg')\nprint(img.shape)\n# (480, 640, 3)\n#    ^    ^   ^\n#    |    |   +-- channels  (3 = colour,  1 = grayscale)\n#    |    +------- width in pixels\n#    +------------- height in pixels\nOutput:\n(480, 640, 3)\nMemory consumed by one image = height × width × channels × bytes per pixel\nFor a standard colour image: 480 × 640 × 3 × 1 byte = 921,600 bytes ≈ 0.9 MB\nThis is why batches of images consume so much memory during training. A batch of 32 images at 224×224 pixels = 32 × 224 × 224 × 3 = 48,365,568 bytes ≈ 46 MB. Per batch. Just for the images alone."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#one-important-warning-about-opencv",
+    "href": "posts/post-with-code/index.html#one-important-warning-about-opencv",
+    "title": "What is a Picture?",
+    "section": "One important warning about OpenCV",
+    "text": "One important warning about OpenCV\nOpenCV loads images in BGR order, not RGB.\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg_bgr = cv2.imread('your_image.jpg')      # OpenCV loads as BGR\nimg_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)  # convert to RGB\n\n# Displayed with matplotlib — wrong colours (blue and red swapped)\nplt.imshow(img_bgr)\nplt.title(\"BGR — colours look wrong\")\nplt.show()\n\n# Correct colours\nplt.imshow(img_rgb)\nplt.title(\"RGB — correct\")\nplt.show()\nOutput:\n\n\n\nSame image displayed as BGR (wrong colours) and RGB (correct colours)\n\n\nBlue and red channels are swapped. OpenCV does this for historical reasons. Just remember the rule — OpenCV = BGR. Everything else = RGB. Always convert before displaying."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#what-you-should-now-be-able-to-say",
+    "href": "posts/post-with-code/index.html#what-you-should-now-be-able-to-say",
+    "title": "What is a Picture?",
+    "section": "What you should now be able to say",
+    "text": "What you should now be able to say\nBefore this post, you knew an image was “a file you open with OpenCV.”\nNow you know:\n\nAn image is a rectangular grid of numbers — nothing more\nEach number is a pixel value between 0 and 255\nGrayscale images have 1 channel, colour images have 3 (or sometimes 4)\nThe shape of an image array is (height, width, channels) — height always first\nOpenCV loads in BGR, not RGB — always convert before displaying\nMemory = height × width × channels — and this adds up fast\n\nThis is the foundation. Every algorithm in computer vision — convolutions, feature detection, object detection, segmentation — operates on this grid of numbers. The better you understand the grid, the better you will understand everything built on top of it.\n\nNext in First Principles → Why Does Color Space Matter? — RGB, BGR, HSV, LAB, Grayscale — what each one actually represents and when using the wrong one silently ruins your results."
+  },
+  {
+    "objectID": "posts/what-is-a-picture/index.html",
+    "href": "posts/what-is-a-picture/index.html",
+    "title": "What is a Picture?",
+    "section": "",
+    "text": "When I got my first smartphone, I became obsessed with photography. I would click pictures of everything — chai, sunsets, my neighbour’s cat. One day my younger brother asked me, “Bhaiya, what actually is a photo? Like, what is it made of?”\nI said, “Arrey, it is light captured on a sensor.”\nHe said, “Okay but what does the phone store? It does not store light.”\nI had no answer. I had been taking photos for two years and I had no idea what the phone was actually saving. I just knew it looked nice on Instagram.\nYears later when I started working in computer vision I realised — most people who write OpenCV code are exactly like me that day. They know it looks nice. They have no idea what it actually is.\nSo let us fix that. Right now."
+  },
+  {
+    "objectID": "posts/what-is-a-picture/index.html#a-story-first",
+    "href": "posts/what-is-a-picture/index.html#a-story-first",
+    "title": "What is a Picture?",
+    "section": "",
+    "text": "When I got my first smartphone, I became obsessed with photography. I would click pictures of everything — chai, sunsets, my neighbour’s cat. One day my younger brother asked me, “Bhaiya, what actually is a photo? Like, what is it made of?”\nI said, “Arrey, it is light captured on a sensor.”\nHe said, “Okay but what does the phone store? It does not store light.”\nI had no answer. I had been taking photos for two years and I had no idea what the phone was actually saving. I just knew it looked nice on Instagram.\nYears later when I started working in computer vision I realised — most people who write OpenCV code are exactly like me that day. They know it looks nice. They have no idea what it actually is.\nSo let us fix that. Right now."
+  },
+  {
+    "objectID": "posts/what-is-a-picture/index.html#what-you-see-vs-what-the-computer-sees",
+    "href": "posts/what-is-a-picture/index.html#what-you-see-vs-what-the-computer-sees",
+    "title": "What is a Picture?",
+    "section": "What you see vs what the computer sees",
+    "text": "What you see vs what the computer sees\nYou look at a photo and you see a mountain, a face, a cup of chai.\n\n\n\nA cup of chai — something you recognise instantly\n\n\nThe computer sees none of that. It sees a grid of numbers. That is it. Nothing more.\nEach tiny dot in that grid is called a pixel — short for picture element. And each pixel is just a number — representing how bright or what colour that dot is.\nHere is the same cup of chai, shown the way a computer actually sees it — as raw numbers:\n\n\n\nA tiny 8×8 patch from the image — each number is one pixel's brightness (0=black, 255=white)\n\n\n210\n198\n174\n195\n212\n220\n228\n218\n\n\n142\n158\n168\n138\n122\n148\n162\n155\n\n\n82\n98\n118\n90\n76\n94\n112\n105\n\n\n188\n205\n195\n182\n206\n215\n222\n206\n\n\n\n\n\nThat table above — those are actual brightness values. That is what the computer is working with when it “looks” at your chai photo. No shapes. No objects. No meaning. Just numbers."
+  },
+  {
+    "objectID": "posts/what-is-a-picture/index.html#try-it-yourself-your-image-your-numbers",
+    "href": "posts/what-is-a-picture/index.html#try-it-yourself-your-image-your-numbers",
+    "title": "What is a Picture?",
+    "section": "Try it yourself — your image, your numbers",
+    "text": "Try it yourself — your image, your numbers\nUpload any image and see exactly what a computer sees. The widget below takes a small patch from your image and shows you the raw pixel values.\n\n\n  \n    Upload any image\n    \n  \n\n  \n\n    \n\n      \n        What you see\n        \n        \n      \n\n      \n        What the computer sees — pixel values\n        \n        Showing a 10×10 patch from the top-left corner\n      \n\n    \n\n    \n      Colour channels\n      \n      \n    \n\n    \n    \n\n  \n\n  \n    Upload an image above to explore its pixel values"
+  },
+  {
+    "objectID": "posts/what-is-a-picture/index.html#the-meaning-of-those-numbers",
+    "href": "posts/what-is-a-picture/index.html#the-meaning-of-those-numbers",
+    "title": "What is a Picture?",
+    "section": "The meaning of those numbers",
+    "text": "The meaning of those numbers\nIn a grayscale image, each pixel is a single number between 0 and 255.\n\n0 means completely black\n255 means completely white\nEverything in between is a shade of grey\n\nWhy 255? Because a pixel value is stored in 8 bits (1 byte). The maximum value 8 bits can hold is 2⁸ − 1 = 255. This is not arbitrary — it is a direct consequence of how computers store data.\nimport numpy as np\n\npixel_value = np.uint8(200)\nprint(f\"Pixel value:   {pixel_value}\")\nprint(f\"In binary:     {bin(pixel_value)}\")\nprint(f\"Max possible:  {np.iinfo(np.uint8).max}\")\nOutput:\nPixel value:   200\nIn binary:     0b11001000\nMax possible:  255\n\n\n\n\n\n\nNote\n\n\n\nWhy does this matter? When you normalise your image for a neural network by dividing by 255, you now know exactly why. You are mapping the range [0, 255] to [0.0, 1.0]. Every value becomes a fraction of the maximum possible brightness."
+  },
+  {
+    "objectID": "posts/what-is-a-picture/index.html#creating-and-reading-an-image-as-numbers",
+    "href": "posts/what-is-a-picture/index.html#creating-and-reading-an-image-as-numbers",
+    "title": "What is a Picture?",
+    "section": "Creating and reading an image as numbers",
+    "text": "Creating and reading an image as numbers\nLet us make this concrete. We will create a tiny 5×5 image entirely from scratch using just numbers — no camera, no file.\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Create a tiny 5x5 grayscale image manually — just numbers\ntiny_image = np.array([\n    [  0,   0,   0,   0,   0],\n    [  0, 128, 128, 128,   0],\n    [  0, 128, 255, 128,   0],\n    [  0, 128, 128, 128,   0],\n    [  0,   0,   0,   0,   0]\n], dtype=np.uint8)\n\nprint(\"The image IS these numbers:\")\nprint(tiny_image)\nprint(\"\\nShape:\", tiny_image.shape)\nOutput:\nThe image IS these numbers:\n[[  0   0   0   0   0]\n [  0 128 128 128   0]\n [  0 128 255 128   0]\n [  0 128 128 128   0]\n [  0   0   0   0   0]]\n\nShape: (5, 5)\n# Now display it — matplotlib turns those numbers into a visible image\nplt.figure(figsize=(3, 3))\nplt.imshow(tiny_image, cmap='gray', vmin=0, vmax=255)\nplt.title(\"Our 5×5 image\")\nplt.axis('off')\nplt.show()\nOutput:\n\n\n\nA dark 5×5 square with a bright centre pixel — created entirely from numbers\n\n\nYou are looking at a dark square with a bright centre. That image does not come from a camera. It comes from the array of numbers we typed. The grid of numbers is the image — there is nothing else behind it."
+  },
+  {
+    "objectID": "posts/what-is-a-picture/index.html#colour-images-three-grids-not-one",
+    "href": "posts/what-is-a-picture/index.html#colour-images-three-grids-not-one",
+    "title": "What is a Picture?",
+    "section": "Colour images — three grids, not one",
+    "text": "Colour images — three grids, not one\nA grayscale image is one grid of numbers. A colour image is three grids stacked together.\nEach grid is called a channel. The three channels in a standard colour image represent:\n\nR — how much Red is in each pixel (0 to 255)\nG — how much Green is in each pixel (0 to 255)\nB — how much Blue is in each pixel (0 to 255)\n\nTogether, RGB can represent approximately 16.7 million colours (256 × 256 × 256).\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Create a 100x100 colour image — manually set each channel\ncolour_image = np.zeros((100, 100, 3), dtype=np.uint8)\ncolour_image[:, :, 0] = 200   # Red channel   — strong\ncolour_image[:, :, 1] = 80    # Green channel — medium\ncolour_image[:, :, 2] = 20    # Blue channel  — weak\n\nprint(\"Shape:\", colour_image.shape)\nprint(\"Red channel — sample values:\", colour_image[0, :5, 0])\nprint(\"Green channel — sample values:\", colour_image[0, :5, 1])\nprint(\"Blue channel — sample values:\", colour_image[0, :5, 2])\nOutput:\nShape: (100, 100, 3)\nRed channel — sample values:   [200 200 200 200 200]\nGreen channel — sample values: [ 80  80  80  80  80]\nBlue channel — sample values:  [ 20  20  20  20  20]\n# Plot the image and its three channels separately\nfig, axes = plt.subplots(1, 4, figsize=(14, 4))\n\naxes[0].imshow(colour_image)\naxes[0].set_title(\"Original colour\")\naxes[0].axis('off')\n\nnames = ['Red channel', 'Green channel', 'Blue channel']\ncmaps = ['Reds', 'Greens', 'Blues']\nfor i in range(3):\n    axes[i+1].imshow(colour_image[:, :, i], cmap=cmaps[i], vmin=0, vmax=255)\n    axes[i+1].set_title(names[i])\n    axes[i+1].axis('off')\n\nplt.tight_layout()\nplt.show()\nOutput:\n\n\n\nThe colour image split into its three individual channels — R, G, and B\n\n\nNotice the shape — (100, 100, 3). This tells you everything: height 100, width 100, and 3 channels. That third dimension is where colour lives.\n\n\n\n\n\n\nImportant\n\n\n\nChannels are not always 3. In the pixel explorer above you saw 3 channels — R, G, and B. But this number changes depending on the colour scheme used. An image can have 1 channel (Grayscale), 3 channels (RGB, BGR, or HSV), or 4 channels (RGBA — where the 4th channel stores transparency, like a PNG with a transparent background). We cover all of this properly in the next post."
+  },
+  {
+    "objectID": "posts/what-is-a-picture/index.html#what-the-shape-tells-you",
+    "href": "posts/what-is-a-picture/index.html#what-the-shape-tells-you",
+    "title": "What is a Picture?",
+    "section": "What the shape tells you",
+    "text": "What the shape tells you\nThe shape of an image array is the single most important thing to check every time you load an image.\nimport cv2\n\nimg = cv2.imread('your_image.jpg')\nprint(img.shape)\n# (480, 640, 3)\n#    ^    ^   ^\n#    |    |   +-- channels  (3 = colour,  1 = grayscale)\n#    |    +------- width in pixels\n#    +------------- height in pixels\nOutput:\n(480, 640, 3)\nMemory consumed by one image = height × width × channels × bytes per pixel\nFor a standard colour image: 480 × 640 × 3 × 1 byte = 921,600 bytes ≈ 0.9 MB\nThis is why batches of images consume so much memory during training. A batch of 32 images at 224×224 pixels = 32 × 224 × 224 × 3 = 48,365,568 bytes ≈ 46 MB. Per batch. Just for the images alone."
+  },
+  {
+    "objectID": "posts/what-is-a-picture/index.html#one-important-warning-about-opencv",
+    "href": "posts/what-is-a-picture/index.html#one-important-warning-about-opencv",
+    "title": "What is a Picture?",
+    "section": "One important warning about OpenCV",
+    "text": "One important warning about OpenCV\nOpenCV loads images in BGR order, not RGB.\nimport cv2\nimport matplotlib.pyplot as plt\n\nimg_bgr = cv2.imread('your_image.jpg')      # OpenCV loads as BGR\nimg_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)  # convert to RGB\n\n# Displayed with matplotlib — wrong colours (blue and red swapped)\nplt.imshow(img_bgr)\nplt.title(\"BGR — colours look wrong\")\nplt.show()\n\n# Correct colours\nplt.imshow(img_rgb)\nplt.title(\"RGB — correct\")\nplt.show()\nOutput:\n\n\n\nSame image displayed as BGR (wrong colours) and RGB (correct colours)\n\n\nBlue and red channels are swapped. OpenCV does this for historical reasons. Just remember the rule — OpenCV = BGR. Everything else = RGB. Always convert before displaying."
+  },
+  {
+    "objectID": "posts/what-is-a-picture/index.html#what-you-should-now-be-able-to-say",
+    "href": "posts/what-is-a-picture/index.html#what-you-should-now-be-able-to-say",
+    "title": "What is a Picture?",
+    "section": "What you should now be able to say",
+    "text": "What you should now be able to say\nBefore this post, you knew an image was “a file you open with OpenCV.”\nNow you know:\n\nAn image is a rectangular grid of numbers — nothing more\nEach number is a pixel value between 0 and 255\nGrayscale images have 1 channel, colour images have 3 (or sometimes 4)\nThe shape of an image array is (height, width, channels) — height always first\nOpenCV loads in BGR, not RGB — always convert before displaying\nMemory = height × width × channels — and this adds up fast\n\nThis is the foundation. Every algorithm in computer vision — convolutions, feature detection, object detection, segmentation — operates on this grid of numbers. The better you understand the grid, the better you will understand everything built on top of it.\n\nNext in First Principles → Why Does Color Space Matter? — RGB, BGR, HSV, LAB, Grayscale — what each one actually represents and when using the wrong one silently ruins your results."
   }
 ]

@@ -28,5 +28,8 @@
   },
   "paper-to-code.qmd": {
     "paper-to-code.html": "91465b91"
+  },
+  "posts/what-is-a-picture/index.qmd": {
+    "index.html": "48cfe17b"
   }
 }
